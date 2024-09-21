@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Cassava Dx</string>
+    <string name="open_camera">Open Camera</string>
+
+    <string name="bacterial_blight">Bacterial Blight</string>
+    <string name="bacterial_blight_description">Cassava bacterial blight is caused by the bacterium Xanthomonas axonopodis pv. manihotis. It is a devastating disease that results in wilting, yellowing of leaves, and the appearance of dark, water-soaked lesions on the leaf surface, stems, and petioles. The disease can spread rapidly during the rainy season and in areas with high humidity, causing significant damage to cassava plants and reducing yields.</string>
+    <string name="bacterial_blight_treatment">Effective management of cassava bacterial blight includes planting resistant cassava varieties, practicing crop rotation, and ensuring proper field hygiene. Infected plants should be removed and destroyed to prevent the spread of the bacteria. Farmers are also advised to avoid overhead irrigation and to manage weeds that may harbor the bacteria.</string>
+
+    <string name="brown_streak">Brown Streak Disease</string>
+    <string name="brown_streak_description">Cassava brown streak disease is a viral disease caused by two types of viruses, Cassava brown streak virus (CBSV) and Ugandan cassava brown streak virus (UCBSV). It primarily affects the roots of cassava, causing necrosis or browning of the flesh, which makes the roots unusable. Above-ground symptoms include yellowish-brown streaks on the stems and vein chlorosis on the leaves.</string>
+    <string name="brown_streak_treatment">To manage cassava brown streak disease, planting virus-free cassava cuttings is essential. Integrated pest management, including control of whiteflies (which transmit the virus), is also recommended. Resistant or tolerant varieties should be selected, and affected plants must be removed and destroyed to limit the disease\'s spread.</string>
+
+    <string name="green_mottle">Green Mottle</string>
+    <string name="green_mottle_description">Cassava green mottle is caused by the Cassava green mottle virus (CGMV). It manifests as mottled, distorted, or curled leaves, often leading to stunted plant growth. The disease can reduce the overall yield and quality of cassava tubers, particularly in areas where it becomes endemic.</string>
+    <string name="green_mottle_treatment">Preventing the spread of cassava green mottle involves using virus-free planting materials and practicing good farm hygiene. Infected plants should be removed and destroyed to limit the spread. Farmers are also encouraged to plant resistant cassava varieties and maintain field sanitation to reduce vector populations that transmit the virus.</string>
+
+    <string name="mosaic_disease">Mosaic Disease</string>
+    <string name="mosaic_disease_description">Cassava mosaic disease is one of the most widespread and damaging viral diseases affecting cassava. It is caused by several species of geminiviruses, including African cassava mosaic virus (ACMV) and East African cassava mosaic virus (EACMV). Infected plants exhibit mosaic-like patterns of yellow and green patches on their leaves, distorted leaves, and stunted growth, significantly reducing cassava yields.</string>
+    <string name="mosaic_disease_treatment">The most effective strategy to manage cassava mosaic disease is the use of resistant varieties. Planting clean, virus-free cuttings is crucial in preventing the spread of CMD. Additionally, controlling whiteflies, which act as vectors for the disease, can help minimize infection. Destroying infected plants is also important to prevent further spread of the disease.n</string>
+
+    <string name="welcome">WELCOME TO OUR LEAF DISEASE DETECTION APP!</string>
+    <string name="welcome_text">Designed to assist farmers, gardeners, and anyone interested in plant health, this application utilizes advanced image recognition technology to identify diseases affecting plant leaves.\n\nSimply take a photo of a leaf or select one from your gallery, and it will now swiftly analyze it; receive accurate diagnosis and recommended actions to help maintain the health of your plants.\n \nWhether you\'re a novice farmer or a seasoned gardener, this “leaf disease detection app” is your useful and go-to handy tool for proactive plant care.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
