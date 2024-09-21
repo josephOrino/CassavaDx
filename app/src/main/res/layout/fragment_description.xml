@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="55dp"
+    tools:context=".DescriptionFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="70dp"
+        android:layout_marginHorizontal="20dp"
+        app:cardBackgroundColor="@color/light_yellow"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/disease_name_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Disease Name"
+                    android:textSize="20sp"
+                    android:textColor="@color/dark_green"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/disease_description_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="This section provides a detailed description of the identified disease affecting the leaf. It covers the common symptoms associated with the disease, such as discoloration, spots, blights, or wilting, and explains how the disease typically affects plant growth and health. Information about the conditions that favor the disease, such as temperature, humidity, and soil quality, will also be presented. Understanding these factors can help in recognizing early signs of the disease in your plants."
+                    android:textSize="15sp"
+                    android:textColor="@color/dark_green"
+                    android:layout_marginVertical="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="Treatment"
+                    android:textSize="20sp"
+                    android:textColor="@color/dark_green"/>
+
+                <TextView
+                    android:id="@+id/treatment_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Based on the image analysis, the app will offer insights into the severity of the disease, its potential impact on the plant, and the likelihood of it spreading to other plants. Additionally, this section includes recommended treatments, prevention strategies, and care tips to manage the disease. You'll also find suggestions for improving soil health, adjusting watering schedules, or using organic or chemical treatments to combat the disease effectively."
+                    android:textSize="15sp"
+                    android:textColor="@color/dark_green"
+                    android:layout_marginVertical="10dp"/>
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

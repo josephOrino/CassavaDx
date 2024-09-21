@@ -2,63 +2,57 @@ package com.example.cassavadx;
 
 import android.os.Bundle;
 
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link DiseaseFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class DiseaseFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public DiseaseFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment DiseaseFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static DiseaseFragment newInstance(String param1, String param2) {
-        DiseaseFragment fragment = new DiseaseFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_disease, container, false);
+//        return inflater.inflate(R.layout.fragment_disease, container, false);
+        View view = inflater.inflate(R.layout.fragment_disease, container, false);
+
+        cardViewClick(view, R.id.bacterialBlightCV, R.string.bacterial_blight, R.string.bacterial_blight_description, R.string.bacterial_blight_treatment);
+        cardViewClick(view, R.id.brownStreakCV, R.string.brown_streak, R.string.brown_streak_description, R.string.brown_streak_treatment);
+        cardViewClick(view, R.id.greenMottleCV, R.string.green_mottle, R.string.green_mottle_description, R.string.green_mottle_treatment);
+        cardViewClick(view, R.id.mosaicDiseaseCV, R.string.mosaic_disease, R.string.mosaic_disease_description, R.string.mosaic_disease_treatment);
+
+
+
+        return view;
+    }
+
+    private void replaceFragment(Fragment fragment){
+//        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout, fragment);
+        fragmentTransaction.commit();
+
+    }
+
+    private void cardViewClick(View view, int id, int name, int description, int treatment){
+        CardView cardView = view.findViewById(id);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Bundle result = new Bundle();
+                result.putString("disease_name", getString(name));
+                result.putString("disease_description", getString(description));
+                result.putString("disease_treatment", getString(treatment));
+                getParentFragmentManager().setFragmentResult("dataFrom1", result);
+
+                replaceFragment(new DescriptionFragment());
+            }
+        });
     }
 }
