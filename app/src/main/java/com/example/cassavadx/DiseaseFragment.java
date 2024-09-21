@@ -2,6 +2,7 @@ package com.example.cassavadx;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -26,7 +27,19 @@ public class DiseaseFragment extends Fragment {
         cardViewClick(view, R.id.greenMottleCV, R.string.green_mottle, R.string.green_mottle_description, R.string.green_mottle_treatment);
         cardViewClick(view, R.id.mosaicDiseaseCV, R.string.mosaic_disease, R.string.mosaic_disease_description, R.string.mosaic_disease_treatment);
 
+        // Intercept the back press event
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // Programmatically select the home tab in bottom navigation
+                if (getActivity() instanceof MainActivity) {
+                    ((MainActivity) getActivity()).navigateToHome();
+                }
+            }
+        };
 
+        // Add the callback to handle back press in this fragment
+        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
 
         return view;
     }

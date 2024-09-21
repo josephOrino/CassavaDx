@@ -2,6 +2,7 @@ package com.example.cassavadx;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,6 +16,8 @@ public class PredictionFragment extends Fragment {
     private ImageView imageView;
     private TextView percentageRate;
     private TextView diseaseName;
+    private TextView treatment;
+
     private String name = "";
     private String percentage = "";
     @Override
@@ -25,6 +28,7 @@ public class PredictionFragment extends Fragment {
         imageView = view.findViewById(R.id.imageView);
         percentageRate = view.findViewById(R.id.percentage_rate);
         diseaseName = view.findViewById(R.id.disease_name);
+        treatment = view.findViewById(R.id.treatment);
 
         // Retrieve the image and prediction result from the arguments
         Bundle args = getArguments();
@@ -37,17 +41,28 @@ public class PredictionFragment extends Fragment {
                 imageView.setImageBitmap(bitmap);
             }
             diseaseName.setText(name);
-            percentageRate.setText(percentage);
-
-            switch (name){
-                case "Cassava Bacterial Blight":
-            }
+            percentageRate.setText("Prediction Confidence Rate:" + percentage);
+            treatment.setText(identifyTreatment(name));
         }
+
+        // Intercept the back press event
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                // Programmatically select the home tab in bottom navigation
+                if (getActivity() instanceof MainActivity) {
+                    ((MainActivity) getActivity()).navigateToHome();
+                }
+            }
+        };
+
+        // Add the callback to handle back press in this fragment
+        requireActivity().getOnBackPressedDispatcher().addCallback(getViewLifecycleOwner(), callback);
 
         return view;
     }
 
-    public void splitString(String input) {
+    private void splitString(String input) {
         // Split the input string by the colon and space ": "
         String[] parts = input.split(": ");
 
@@ -56,6 +71,28 @@ public class PredictionFragment extends Fragment {
 
         // Assign the second part to 'percentage'
         percentage = parts[1];
+    }
+
+    private String identifyTreatment(String diseaseName){
+        String treatment = "";
+        switch (diseaseName){
+            case "Cassava Bacterial Blight":
+                treatment = getString(R.string.bacterial_blight_treatment);
+                break;
+            case "Cassava Brown Streak Disease":
+                treatment = getString(R.string.brown_streak_treatment);
+                break;
+            case "Cassava Green Mottle":
+                treatment = getString(R.string.green_mottle_treatment);
+                break;
+            case "Cassava Mosaic Disease":
+                treatment = getString(R.string.mosaic_disease_treatment);
+                break;
+            default:
+                treatment = "No treatment available";
+                break;
+        }
+        return treatment;
     }
 
 }

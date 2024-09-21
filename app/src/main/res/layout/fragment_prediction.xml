@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".PredictionFragment"
     android:layout_marginTop="55dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/bacterialBlightCV"
@@ -59,7 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Percentage rate: 99%"
+                    android:text="Prediction Confidence Rate: 99%"
                     android:textSize="15sp"
                     android:textColor="@color/dark_green"
                     android:layout_marginVertical="10dp"/>

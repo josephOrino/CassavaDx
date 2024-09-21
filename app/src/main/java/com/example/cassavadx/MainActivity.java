@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment);
-        fragmentTransaction.commit();
+        fragmentTransaction.addToBackStack(null).commit();
 
     }
 
@@ -157,11 +157,7 @@ public class MainActivity extends AppCompatActivity {
                     requestPermissions(new String[]{Manifest.permission.CAMERA},100);
                 }
 
-                replaceFragment(new PredictionFragment());
-
                 dialog.dismiss();
-//                Toast.makeText(MainActivity.this,"Open camera is clicked",Toast.LENGTH_SHORT).show();
-
             }
         });
 
@@ -172,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 galleryLauncher.launch(galleryIntent);
 
-                replaceFragment(new PredictionFragment());
 
                 dialog.dismiss();
 //                Toast.makeText(MainActivity.this,"Choose from gallery is clicked",Toast.LENGTH_SHORT).show();
@@ -258,5 +253,24 @@ public class MainActivity extends AppCompatActivity {
 
 //        return resultString.toString();
         return highestScoringLabel + ": " + String.format("%.2f", highestProbability * 100) + "%";
+    }
+
+    public void navigateToHome() {
+        // Imitate the selection of the home tab
+        binding.bottomNavigationView.setSelectedItemId(R.id.home);
+    }
+
+
+    public void navigateToDiseaseFragment() {
+        // Create a new instance of DiseaseFragment and replace the current fragment
+        DiseaseFragment diseaseFragment = new DiseaseFragment();
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        // Replace the current fragment with DiseaseFragment and add it to the back stack
+        fragmentTransaction.replace(R.id.frame_layout, diseaseFragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
     }
 }

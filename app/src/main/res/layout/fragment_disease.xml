@@ -8,6 +8,7 @@
     tools:context=".DiseaseFragment"
     android:layout_marginTop="55dp"
     android:orientation="vertical"
+    android:background="@color/white"
     >
 
     <androidx.cardview.widget.CardView
@@ -39,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="@string/bacterial_blight_description"
+                android:text="@string/click_for_more_info"
                 android:textSize="15sp"
                 android:textColor="@color/dark_green"
                 android:layout_marginBottom="10dp"
@@ -79,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="@string/brown_streak_description"
+                android:text="@string/click_for_more_info"
                 android:textSize="15sp"
                 android:textColor="@color/dark_green"
                 android:layout_marginBottom="10dp"
@@ -119,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="@string/green_mottle_description"
+                android:text="@string/click_for_more_info"
                 android:textSize="15sp"
                 android:textColor="@color/dark_green"
                 android:layout_marginBottom="10dp"
@@ -159,7 +160,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-medium"
-                android:text="@string/mosaic_disease_description"
+                android:text="@string/click_for_more_info"
                 android:textSize="15sp"
                 android:textColor="@color/dark_green"
                 android:layout_marginBottom="10dp"

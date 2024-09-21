@@ -2,6 +2,8 @@
     <string name="app_name">Cassava Dx</string>
     <string name="open_camera">Open Camera</string>
 
+    <string name="click_for_more_info">Click for more information.</string>
+
     <string name="bacterial_blight">Bacterial Blight</string>
     <string name="bacterial_blight_description">Cassava bacterial blight is caused by the bacterium Xanthomonas axonopodis pv. manihotis. It is a devastating disease that results in wilting, yellowing of leaves, and the appearance of dark, water-soaked lesions on the leaf surface, stems, and petioles. The disease can spread rapidly during the rainy season and in areas with high humidity, causing significant damage to cassava plants and reducing yields.</string>
     <string name="bacterial_blight_treatment">Effective management of cassava bacterial blight includes planting resistant cassava varieties, practicing crop rotation, and ensuring proper field hygiene. Infected plants should be removed and destroyed to prevent the spread of the bacteria. Farmers are also advised to avoid overhead irrigation and to manage weeds that may harbor the bacteria.</string>
