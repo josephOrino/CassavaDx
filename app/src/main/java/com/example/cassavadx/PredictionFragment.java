@@ -82,8 +82,8 @@ public class PredictionFragment extends Fragment {
             case "Cassava Brown Streak Disease":
                 treatment = getString(R.string.brown_streak_treatment);
                 break;
-            case "Cassava Green Mottle":
-                treatment = getString(R.string.green_mottle_treatment);
+            case "Cassava Green Mite":
+                treatment = getString(R.string.green_mite_treatment);
                 break;
             case "Cassava Mosaic Disease":
                 treatment = getString(R.string.mosaic_disease_treatment);

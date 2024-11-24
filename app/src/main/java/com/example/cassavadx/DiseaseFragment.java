@@ -24,7 +24,7 @@ public class DiseaseFragment extends Fragment {
 
         cardViewClick(view, R.id.bacterialBlightCV, R.string.bacterial_blight, R.string.bacterial_blight_description, R.string.bacterial_blight_treatment);
         cardViewClick(view, R.id.brownStreakCV, R.string.brown_streak, R.string.brown_streak_description, R.string.brown_streak_treatment);
-        cardViewClick(view, R.id.greenMottleCV, R.string.green_mottle, R.string.green_mottle_description, R.string.green_mottle_treatment);
+        cardViewClick(view, R.id.greenMiteCV, R.string.green_mite, R.string.green_mite_description, R.string.green_mite_treatment);
         cardViewClick(view, R.id.mosaicDiseaseCV, R.string.mosaic_disease, R.string.mosaic_disease_description, R.string.mosaic_disease_treatment);
 
         // Intercept the back press event
