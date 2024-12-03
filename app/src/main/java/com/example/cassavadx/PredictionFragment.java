@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 
 public class PredictionFragment extends Fragment {
     private ImageView imageView;
@@ -40,8 +42,13 @@ public class PredictionFragment extends Fragment {
             if (bitmap != null) {
                 imageView.setImageBitmap(bitmap);
             }
-            diseaseName.setText(name);
-            percentageRate.setText("Prediction Confidence Rate:" + percentage);
+            if (Objects.equals(name, "Unknown")) {
+                diseaseName.setText(name);
+                percentageRate.setText("No cassava leaf found.");
+            } else {
+                diseaseName.setText(name);
+                percentageRate.setText("Prediction Confidence Rate: " + percentage);
+            }
             treatment.setText(identifyTreatment(name));
         }
 
@@ -74,7 +81,7 @@ public class PredictionFragment extends Fragment {
     }
 
     private String identifyTreatment(String diseaseName){
-        String treatment = "";
+        String treatment;
         switch (diseaseName){
             case "Cassava Bacterial Blight":
                 treatment = getString(R.string.bacterial_blight_treatment);
@@ -89,7 +96,7 @@ public class PredictionFragment extends Fragment {
                 treatment = getString(R.string.mosaic_disease_treatment);
                 break;
             default:
-                treatment = "No treatment available";
+                treatment = "No treatment available.";
                 break;
         }
         return treatment;
