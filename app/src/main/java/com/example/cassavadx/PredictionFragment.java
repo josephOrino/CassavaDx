@@ -75,6 +75,20 @@ public class PredictionFragment extends Fragment {
 
         // Assign the first part to 'name'
         name = parts[0];
+        switch (name){
+            case "Cassava Bacterial Blight":
+                name = "Cassava Bacterial Blight (Bacterial)";
+                break;
+            case "Cassava Brown Streak Disease":
+                name = "Cassava Brown Streak Disease (Viral)";
+                break;
+            case "Cassava Green Mite":
+                name = "Cassava Green Mite";
+                break;
+            case "Cassava Mosaic Disease":
+                name = "Cassava Mosaic Disease (Viral)";
+                break;
+        }
 
         // Assign the second part to 'percentage'
         percentage = parts[1];
@@ -83,16 +97,16 @@ public class PredictionFragment extends Fragment {
     private String identifyTreatment(String diseaseName){
         String treatment;
         switch (diseaseName){
-            case "Cassava Bacterial Blight":
+            case "Cassava Bacterial Blight (Bacterial)":
                 treatment = getString(R.string.bacterial_blight_treatment);
                 break;
-            case "Cassava Brown Streak Disease":
+            case "Cassava Brown Streak Disease (Viral)":
                 treatment = getString(R.string.brown_streak_treatment);
                 break;
             case "Cassava Green Mite":
                 treatment = getString(R.string.green_mite_treatment);
                 break;
-            case "Cassava Mosaic Disease":
+            case "Cassava Mosaic Disease (Viral)":
                 treatment = getString(R.string.mosaic_disease_treatment);
                 break;
             default:
